@@ -15,9 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        
         User::create([
             'name' => 'Admin',
-            'email' => 'admin@'.config('app.name').'.com',
+            'email' => 'admin@'.str_replace(' ','', strtolower(config('app.name'))).'.com',
             'password' => Hash::make('admin'),
             'role' => 'admin'
         ]);

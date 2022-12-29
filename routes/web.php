@@ -23,13 +23,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function (){
     
-    Route::name('ingredient.')
-    ->prefix('/ingredient')
+    Route::name('staff.')
+    ->prefix('/staff')
     ->group(function (){
-        Route::get('/', 'IngredientController@index')->name('index');    
-        Route::post('/register', 'IngredientController@register')->name('register');    
-        Route::post('/{ingredientId}/update', 'IngredientController@update')->name('update');    
-        Route::get('/{ingredientId}/delete', 'IngredientController@delete')->name('delete');        
+        Route::get('/', 'StaffController@index')->name('index');    
+        Route::post('/register', 'StaffController@register')->name('register');    
+        Route::post('/{staffId}/update', 'StaffController@update')->name('update');    
+        Route::get('/{staffId}/delete', 'StaffController@delete')->name('delete');        
     });
 
     
