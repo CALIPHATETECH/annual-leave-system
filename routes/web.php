@@ -32,6 +32,17 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function (){
         Route::get('/{staffId}/delete', 'StaffController@delete')->name('delete');        
     });
 
+    Route::name('application.')
+    ->prefix('/application')
+    ->group(function (){
+        Route::get('/', 'ApplicationController@index')->name('index');    
+        Route::get('/{staffId}/create', 'ApplicationController@create')->name('create');    
+        Route::post('/{staffId}/register', 'ApplicationController@register')->name('register');    
+        Route::post('/{ApplicationId}/update/{status}', 'ApplicationController@update')->name('update');    
+        Route::get('/{ApplicationId}/response/{status}', 'ApplicationController@response')->name('response');    
+        Route::get('/{ApplicationId}/delete', 'ApplicationController@delete')->name('delete');        
+    });
+
     
     
 });

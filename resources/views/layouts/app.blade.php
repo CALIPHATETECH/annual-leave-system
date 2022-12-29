@@ -25,6 +25,11 @@
       <link rel="stylesheet" href="{{asset('css/jquery.mCustomScrollbar.min.css')}}">
       <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
       <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+      <style>
+      p{
+          color: black;
+      }
+      </style>
    </head>
    <body>
       <!--header section start -->
@@ -39,15 +44,18 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{route('home')}}">Home</a>
                     </li>
+                    @if(Auth::user()->role == 'admin')
                     <li class="nav-item active">
                         <a class="nav-link" href="{{route('staff.index')}}">Staff</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('home')}}">Applications</a>
+                        <a class="nav-link" href="{{route('application.index')}}">Applications</a>
                     </li>
+                    @endif
                     <li class="nav-item active">
                         <a class="nav-link" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">logout</a>
                     </li>
+                    
                     <form action="{{route('logout')}}" method="post" id="logout-form">@csrf</form>
                 </ul>
             </div>
