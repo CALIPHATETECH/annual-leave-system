@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">
-                <b>APROVE {{strtoupper($application->user->name)}} APPLICATION</b></h5>
+                <b>REJECT {{strtoupper($application->user->name)}} APPLICATION</b></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,7 +12,8 @@
             <form enctype="multipart/form-data" action="{{route('application.update',[$application->id,'rejected'])}}" method="post">
                     @csrf
                     <div class="form-group">
-                        <textarea name="comment" id="" cols="30" rows="10" class="input-group form-control" placeholder="Please describe why you need this leave in few sentences">{{old('content')}}</textarea>
+                        <textarea name="comment" id="" cols="30" rows="10" 
+                        class="input-group form-control" placeholder="Please leave the rejection coment for this staff to read">{{old('content')}}</textarea>
                     </div>
                     <button class="btn btn-primary">REJECT</button>
                 </form>

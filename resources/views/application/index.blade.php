@@ -29,6 +29,8 @@
                         <button class="btn btn-danger" data-toggle="modal" data-target="#reject_{{$application->id}}">Reject</button>
                     @endif
                     </td>
+                    <td></td>
+                    <td></td>
                     @include('application.reject')
                     @include('application.approve')
                 </tr>
